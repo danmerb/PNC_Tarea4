@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:color="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Ingresar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link th:rel="stylesheet" th:href="@{assets/bootstrap-datepicker/css/bootstrap-datepicker.css}"/>
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-datepicker/css/bootstrap-datepicker.standalone.css}"/>
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
+</head>
+<body>
+	<div class="container my-3">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h2>Ingresar producto</h2>
+    			<form method="post" th:action="@{/response}" th:object="${prod}">
+	            		<div class="form-group">
+	            			<label class="small mb-1" for="codigo">Codigo:</label>
+	            			<input class="form-control py-4" th:field="*{codigoProducto}" id="codigo" type="text" placeholder="Ingrese codigo" style="width: 400px" name="codigo" />
+	            			<span th:errors="*{codigoProducto}" style="color: #FF0000"></span>
+	            		</div>
+	            		<div class="form-group">
+	            			<label class="small mb-1" for="nombre">Nombre</label>
+	            			<input class="form-control py-4" th:field="*{nombreProducto}" id="nombre" type="text" placeholder="Ingrese nombre" style="width: 400px" name="nombre" />
+	            			<span th:errors="*{nombreProducto}" style="color: #FF0000"></span>
+	            		</div>
+	            		<div class="form-group">
+	            			<label class="small mb-1" for="marca">Marca:</label>
+	            			<input class="form-control py-4" th:field="*{marcaProducto}" id="marca" type="text" placeholder="Ingrese Marca" style="width: 400px" name="marca" />
+	            			<span th:errors="*{marcaProducto}" style="color: #FF0000"></span>
+	            		</div>
+	            		
+	            		<div class="form-group">
+	            			<label class="small mb-1" for="descripcion">Descripcion</label>
+	            			<input class="form-control py-4" th:field="*{descripcionProducto}" id="descripcion" type="text" placeholder="Ingrese descripcion" style="width: 400px" name="descripcion" />
+	            			<span th:errors="*{descripcionProducto}" style="color: #FF0000"></span>
+	            		</div>
+	            		<div class="form-group">
+	            			<label class="small mb-1" for="exis">Existencia</label>
+	            			<input class="form-control py-4" th:field="*{existenciasProducto}" id="exis" type="text" placeholder="Ingrese Stock" style="width: 400px" name="exis" />
+	            			<span th:errors="*{existenciasProducto}" style="color: #FF0000"></span>
+	            		</div>
+	                    <div class="form-group">
+	            			<label class="small mb-1" for="fecha">Fecha:</label>
+	            			<input class="form-control py-4" th:field="*{fechaProducto}" id="fecha" type="text" placeholder="Ingrese Usuario" style="width: 400px" name="fecha" />
+	            			<span th:errors="*{fechaProducto}" style="color: #FF0000"></span>
+	            		</div>
+	                    <button type="submit" class="btn btn-primary btn-block mt-3">Guardar Producto</button>
+	                </form>
+       	 	</div>
+    	</div>
+	</div>
+	
+	  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Page level plugin JavaScript-->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
+
+  <!-- Demo scripts for this page-->
+  <script src="js/demo/datatables-demo.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>
+ 
+</body>
+</html>
